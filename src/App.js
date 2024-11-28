@@ -1,16 +1,24 @@
-import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useState } from "react";
+import Counter from "./pages/counter";
 import Landing from "./pages/landing";
-import { divide } from "lodash";
 import Menu from "./components/navbar";
 import Pies from "./components/footer";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
+  const [currentPage, setCurrentPage] = useState("landingPage");
+
+  const Pages = {
+    counterPage: <Counter />,
+    landingPage: <Landing />,
+  };
+
   return (
     <>
-      <Menu />
-      <div class="container">
-        <Landing />
+      <Menu currentPage={currentPage} pageSetter={setCurrentPage} />
+      <div className="container">
+        {Pages[currentPage] || <Landing />}
       </div>
       <Pies />
     </>

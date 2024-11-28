@@ -1,26 +1,32 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
+import { Navbar, Container, Nav } from "react-bootstrap";
 
-const Menu = () => {
+
+const Menu = ({ currentPage, pageSetter }) => {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand className="me-auto p-2" href="#home">
-          Navbar
+        <Navbar.Brand
+          className="me-auto p-2"
+          onClick={() => pageSetter("landingPage")}
+        >
+          Reacts de Battaner
         </Navbar.Brand>
-        <Nav className="justify-content-end" activeKey="/home">
+        <Nav className="justify-content-end" activeKey={currentPage}>
           <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
+            <Nav.Link
+              eventKey="landingPage"
+              onClick={() => pageSetter("landingPage")}
+            >
+              Landing
+            </Nav.Link>
           </Nav.Item>
           <Nav.Item>
-            <Nav.Link eventKey="link-1">About</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-2">Services</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey="link-3">Contact</Nav.Link>
+            <Nav.Link
+              eventKey="counterPage"
+              onClick={() => pageSetter("counterPage")}
+            >
+              Counter
+            </Nav.Link>
           </Nav.Item>
         </Nav>
       </Container>
