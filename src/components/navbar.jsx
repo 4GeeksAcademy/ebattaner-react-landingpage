@@ -28,6 +28,14 @@ const Menu = ({ currentPage, pageSetter }) => {
               Counter
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link
+              eventKey="counterPage"
+              onClick={() => pageSetter("semaforoPage")}
+            >
+              Semáforo
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
       </Container>
     </Navbar>

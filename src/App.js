@@ -4,6 +4,7 @@ import Landing from "./pages/landing";
 import Menu from "./components/navbar";
 import Pies from "./components/footer";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Semaforo } from "./pages/semaforo";
 
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
   const Pages = {
     counterPage: <Counter />,
     landingPage: <Landing />,
+    semaforoPage: <Semaforo />
   };
 
   return (
